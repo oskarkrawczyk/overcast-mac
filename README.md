@@ -1,21 +1,21 @@
 # Overcast for Mac (unofficial)
 
 Unofficial Overcast for Mac is simply the Overcast website wrapped within
-Electron.app, restyled so it feels a bit more native to the desktop.
+**Electron**, restyled so it feels a bit more native to the desktop.
 
 Some interface elements are disabled on purpose because they serve little
-purpose for me, mostly because I use Overcast for iOS for most management and listening, and prefer the mac app to be a nice looking read-only (for now).
+purpose to me, mostly because I use Overcast for iOS for most management and listening, and prefer the mac app to be a nice looking read-only (for now).
 
-![](https://cloud.githubusercontent.com/assets/34213/18970143/64c909d8-8690-11e6-8b06-8e5ad37feb11.png)
+<img width="1036" alt="" src="https://cloud.githubusercontent.com/assets/34213/18993766/17eb58b0-8725-11e6-8a52-a631e7c57e7b.png">
 
 ### Potential Issues
 
-Since it's just a restyled websites, it's prone to potential issues if Marco
+Since it's just a restyled websites, it's prone to potential issues if [Marco](https://twitter.com/marcoarment)
 updates some part of the interface – although should be relatively easy to fix.
 
-### Planned changes
+### Plans
 
-- [ ] **Build the initial macOS package**
+- [x] **Build the initial macOS package**
 - [x] Dock and menubar icons
 - [ ] Dark theme
 - [ ] Bring back the ability to search for podcasts
