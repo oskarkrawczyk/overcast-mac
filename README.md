@@ -6,6 +6,8 @@ Unofficial Overcast for Mac is simply the Overcast website wrapped within
 Some interface elements are disabled on purpose because they serve little
 purpose to me, mostly because I use Overcast for iOS for most management and listening, and prefer the mac app to be a nice looking read-only (for now).
 
+### **[Download for Mac](https://github.com/oskarkrawczyk/overcast-mac/releases)**
+
 <img width="1036" alt="" src="https://cloud.githubusercontent.com/assets/34213/18993766/17eb58b0-8725-11e6-8a52-a631e7c57e7b.png">
 
 ### Potential Issues
