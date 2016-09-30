@@ -22,7 +22,7 @@ body {
   font-size: 14px !important;
 
   &.page_podcasts {
-    padding-top: 120px !important;
+    padding-top: 90px !important;
   }
 
   * {
@@ -70,7 +70,7 @@ body {
   #progressbar #timeremaining,
   .ocseparatorbar,             // headings on /podcasts
   #episode_body,               // episode description
-  .centertext.lighttext.marginbottom1,                  // "all podcast" on single podcast screen
+  // .centertext.lighttext.marginbottom1,                  // "all podcast" on single podcast screen
   .new_episode_for_user,                                // "save episode" on single episode screen
   .centertext.lighttext.marginbottom1.margintopneg1,    // hopefully this is only the "back to podcasts" link on single podcast page
   .centertext.margintop1.existing_episode_for_user,     // episodes action
@@ -84,6 +84,13 @@ body {
   .centertext.lighttext.marginbottom1 + div {
     position: absolute;
     top: 0;
+  }
+
+  .centertext.lighttext.marginbottom1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $color-base-3;
   }
 
   .art {
@@ -456,12 +463,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(#fff, 0.95);
-    padding: 50px 0 0;
-    height: 120px;
+    background: rgba(#fff, 0.85);
+    padding: 30px 0 0;
+    height: 90px;
     margin: 0;
     text-align: center;
     font-size: 0;
+    -webkit-app-region: drag;
+    backdrop-filter: blur(6px);
 
     li {
       padding: 0;

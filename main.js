@@ -41,7 +41,8 @@ function createWindow(){
       nodeIntegration: false,
       webSecurity: false,
       allowDisplayingInsecureContent: true,
-      preload: path.join(__dirname, 'browser.js')
+      preload: path.join(__dirname, 'browser.js'),
+      blinkFeatures: "CSSBackdropFilter"
     }
   });
 

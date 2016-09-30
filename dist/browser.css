@@ -8,7 +8,7 @@ body {
   max-width: 100% !important;
   font-size: 14px !important; }
   body.page_podcasts {
-    padding-top: 120px !important; }
+    padding-top: 90px !important; }
   body * {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
     box-sizing: border-box; }
@@ -41,7 +41,6 @@ body {
   body #progressbar #timeremaining,
   body .ocseparatorbar,
   body #episode_body,
-  body .centertext.lighttext.marginbottom1,
   body .new_episode_for_user,
   body .centertext.lighttext.marginbottom1.margintopneg1,
   body .centertext.margintop1.existing_episode_for_user,
@@ -50,6 +49,11 @@ body {
   body .centertext.lighttext.marginbottom1 + div {
     position: absolute;
     top: 0; }
+  body .centertext.lighttext.marginbottom1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgba(46, 47, 64, 0.3); }
   body .art {
     border: none; }
   body a {
@@ -333,12 +337,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 50px 0 0;
-    height: 120px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 0 0;
+    height: 90px;
     margin: 0;
     text-align: center;
-    font-size: 0; }
+    font-size: 0;
+    -webkit-app-region: drag;
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px); }
     body .mainListTabs li {
       padding: 0;
       margin: 0;
