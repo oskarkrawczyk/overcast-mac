@@ -1,13 +1,13 @@
 {
-  "name": "overcast-mac",
-  "version": "1.0.0",
+  "name": "Overcast",
+  "version": "0.9.0",
   "description": "Unofficial Overcast Mac app",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
   },
   "build": {
-    "appId": "com.electron.overcast-mac",
+    "appId": "io.krawczyk.overcast-mac",
     "category": "public.app-category.news",
     "asar": false
   },

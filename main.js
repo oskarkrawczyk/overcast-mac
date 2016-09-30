@@ -6,7 +6,7 @@ const ipc = require('electron').ipcMain
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-const Tray = electron.Tray
+// const Tray = electron.Tray
 const client = require('electron-connect').client
 
 require('electron-debug')();
@@ -76,11 +76,11 @@ function createWindow(){
     mainWindow.show()
   })
 
-  const tray = new Tray(path.join(__dirname, 'tray.png'))
-
-  tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
-  })
+  // const tray = new Tray(path.join(__dirname, 'tray.png'))
+  //
+  // tray.on('click', () => {
+  //   mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+  // })
 }
 
 // This method will be called when Electron has finished
@@ -105,7 +105,7 @@ app.on('activate', function(){
   }
 })
 
-app.dock.hide()
+// app.dock.hide()
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
