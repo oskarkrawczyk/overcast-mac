@@ -1,0 +1,37 @@
+{
+  "name": "overcast-mac",
+  "version": "1.0.0",
+  "description": "Unofficial Overcast Mac app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "build": {
+    "appId": "com.electron.overcast-mac",
+    "category": "public.app-category.news",
+    "asar": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oskarkrawczyk/overcast-mac.git"
+  },
+  "keywords": [
+    "overcast",
+    "mac"
+  ],
+  "author": "Oskar Krawczyk",
+  "bugs": {
+    "url": "https://github.com/oskarkrawczyk/overcast-mac/issues"
+  },
+  "homepage": "https://github.com/oskarkrawczyk/overcast-mac",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0",
+    "electron-packager": "^5.1.0",
+    "electron-connect": "^0.6.0"
+  },
+  "dependencies": {
+    "electron-debug": "^0.5.0",
+    "electron-dl": "^0.2.0",
+    "electron-connect": "^0.6.0"
+  }
+}
