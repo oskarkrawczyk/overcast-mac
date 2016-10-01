@@ -12,7 +12,7 @@ purpose to me, mostly because I use Overcast for iOS for most management and lis
 
 ### Potential Issues
 
-Since it's just a restyled websites, it's prone to potential issues if [Marco](https://twitter.com/marcoarment)
+Since it's just a restyled website, it's prone to potential issues if [Marco](https://twitter.com/marcoarment)
 updates some part of the interface – although should be relatively easy to fix.
 
 ### Plans
