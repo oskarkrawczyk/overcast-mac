@@ -8,6 +8,7 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 // const Tray = electron.Tray
 const client = require('electron-connect').client
+const update = require('./update')
 
 require('electron-debug')();
 require('electron-dl')();
@@ -82,6 +83,9 @@ function createWindow(){
   // tray.on('click', () => {
   //   mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
   // })
+
+  // Don't block rendering with update dialog, wait a bit before checking
+  setTimeout(function () { update.check() }, 8000)
 }
 
 // This method will be called when Electron has finished
