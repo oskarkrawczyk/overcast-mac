@@ -24,7 +24,7 @@ updates some part of the interface – although should be relatively easy to fix
 - [ ] Bring back speed control
 - [ ] Ability to toggle description visibility on channel screen
 - [ ] Better styles on login screen (+ Overcast branding)
-- [ ] Desktop badge for unplayed episodes
+- [x] Dock badge for active episodes
 - [ ] Desktop notification when a new episode is found
 - [x] Fully restyled interface
 

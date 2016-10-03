@@ -1,4 +1,7 @@
-const ipc = require('electron').ipcRenderer
+const electron = require("electron")
+const ipc      = electron.ipcRenderer
+const storage  = electron.remote.require("./storage")
+
 // const NativeNotification = Notification
 
 // Notification = (title, options) => {
@@ -12,7 +15,7 @@ const ipc = require('electron').ipcRenderer
 
 createElements = (htmlStr) => {
   var frag = document.createDocumentFragment(),
-    temp = document.createElement('div');
+    temp = document.createElement("div");
   temp.innerHTML = htmlStr
 
   while (temp.firstChild){
@@ -21,14 +24,16 @@ createElements = (htmlStr) => {
   return frag
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  var player = document.querySelector("audio");
-  var coverart = document.querySelector(".fullart_container .art")
+document.addEventListener("DOMContentLoaded", (event) => {
+  var player      = document.querySelector("audio");
+  var coverart    = document.querySelector(".fullart_container .art")
+  var episodecell = document.querySelectorAll(".episodecell")
+  var count       = episodecell.length > 0 ? episodecell.length : storage.get("active-episodes")
 
   var icons = {
-    back: '<svg viewBox="0 0 16 16"><path class="path1" d="M9 2.5v5l5-5v11l-5-5v5l-5.5-5.5z"></path></svg>',
-    play: '<svg viewBox="0 0 16 16"><path class="path1" d="M3 2l10 6-10 6z"></path></svg>',
-    forward: '<svg viewBox="0 0 16 16"><path class="path1" d="M8 13.5v-5l-5 5v-11l5 5v-5l5.5 5.5z"></path></svg>'
+    back:    "<svg viewBox='0 0 16 16'><path class='path1' d='M9 2.5v5l5-5v11l-5-5v5l-5.5-5.5z'></path></svg>",
+    play:    "<svg viewBox='0 0 16 16'><path class='path1' d='M3 2l10 6-10 6z'></path></svg>",
+    forward: "<svg viewBox='0 0 16 16'><path class='path1' d='M8 13.5v-5l-5 5v-11l5 5v-5l5.5 5.5z'></path></svg>"
   }
 
   var template = {
@@ -58,19 +63,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
         tabs[1].classList.remove("active")
         event.toElement.classList.add("active")
 
+        // hide all episodes and podcasts
         var allcells = document.querySelectorAll(".episodecell, .feedcell")
         for (var ii = 0; ii < allcells.length; ++ii){
           allcells[ii].classList.remove("visible")
         }
 
+        // only show episodes or podcast, depending on the tab active
         showElements(event.toElement.href.split("#")[1])
       })
     }
 
     showElements("episodecell")
+
+    // store the active episodes count for other screens that have
+    // no access to that info
+    storage.set("active-episodes", count);
   }
 
+  // update dock badge on each screen
+  ipc.send("update-badge", {
+    count: count
+  })
+
   if (coverart){
+    
     // inject shadow art
     var shadowart       = document.createElement("img")
     shadowart.src       = coverart.src

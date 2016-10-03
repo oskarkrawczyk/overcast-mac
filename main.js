@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const electron = require('electron')
-const ipc = require('electron').ipcMain
+const ipc = electron.ipcMain
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const client = require('electron-connect').client
@@ -12,14 +12,12 @@ require('electron-dl')();
 let mainWindow
 const devel = process.env.NODE_ENV === "development"
 
-// function updateBadge(title){
-//   if (!app.dock) {
-//     return;
-//   }
-//
-//   const messageCount = (/\(([0-9]+)\)/).exec(title);
-//   app.dock.setBadge(messageCount ? messageCount[1] : '');
-// }
+function updateBadge(title){
+  if (!app.dock) {
+    return;
+  }
+  app.dock.setBadge(title);
+}
 
 function createWindow(){
   mainWindow = new BrowserWindow({
@@ -79,5 +77,12 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (mainWindow === null){
     createWindow()
+  }
+})
+
+ipc.on('update-badge', (event, data) => {
+  let count = data.count
+  if (count){
+    updateBadge(count.toString())
   }
 })
