@@ -5,7 +5,8 @@
   "description": "Unofficial Overcast Mac app",
   "main": "main.js",
   "scripts": {
-    "start": "NODE_ENV=development electron main.js",
+    "start": "electron main.js",
+    "start:dev": "NODE_ENV=development gulp start",
     "build:mac": "./node_modules/.bin/electron-packager . $npm_package_productName --asar --platform=darwin --arch=x64 --version=1.4.2 --app-version=$npm_package_version --out=builds --ignore='^/builds$' --icon=overcast.icns --app-bundle-id=io.krawczyk.overcast-mac --app-category-type=public.app-category.news --overwrite"
   },
   "build": {
