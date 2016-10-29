@@ -22,12 +22,14 @@ function updateBadge(title){
 function createWindow(){
   mainWindow = new BrowserWindow({
     show: false,
+    transparent: false,
+    frame: true,
     width: 1260,
     width: devel ? 1260 : 560,
     minWidth: 460,
     maxWidth: devel ? 1260 : 560,
-    height: 550,
-    maxHeight: 550,
+    // height: 550,
+    // maxHeight: 550,
     minHeight: 550,
     titleBarStyle: 'hidden-inset',
     webPreferences : {
@@ -43,7 +45,7 @@ function createWindow(){
   mainWindow.loadURL('https://overcast.fm/login')
 
   if (devel){
-    mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools({ detach: true })
   }
 
   mainWindow.on('closed', () => {
@@ -62,6 +64,10 @@ function createWindow(){
   // })
 
   mainWindow.once('ready-to-show', () => {
+    let electronVibrancy = require('electron-vibrancy')
+    electronVibrancy.SetVibrancy(true, mainWindow, {
+      Material: 2
+    })
     mainWindow.show()
   })
 }
