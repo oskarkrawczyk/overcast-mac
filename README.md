@@ -1,3 +1,5 @@
+⚠️ **UNMAINTAINED** ⚠️ Switched to Pocket Casts for my podcasting needs.
+
 # Overcast for Mac (unofficial)
 
 Unofficial Overcast for Mac is simply the Overcast website wrapped within
