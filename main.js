@@ -5,6 +5,7 @@ const ipc = electron.ipcMain
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const client = require('electron-connect').client
+const update = require('./update')
 
 require('electron-debug')();
 require('electron-dl')();
@@ -64,6 +65,9 @@ function createWindow(){
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
+
+  // Don't block rendering with update dialog, wait a bit before checking
+  setTimeout(function () { update.check() }, 8000)
 }
 
 app.on('ready', createWindow)
