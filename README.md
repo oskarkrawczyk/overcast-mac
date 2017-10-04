@@ -1,4 +1,4 @@
-⚠️ **UNMAINTAINED** ⚠️ Switched to Pocket Casts for my podcasting needs.
+## ⚠️ UNMAINTAINED: Switched to [Pocket Casts](http://pocketcasts.com) for my podcasting needs. ⚠️
 
 # Overcast for Mac (unofficial)
 
